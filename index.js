@@ -16,7 +16,7 @@ app.use(cors());
 app.use("/", userRoutes);
 
 // Porta definida no arquivo .env
-const PORT = process.env.PORT || 8800;
+const PORT = process.env.PORT || 3000;
 
 // Iniciar o servidor
 app.listen(PORT, () => {
