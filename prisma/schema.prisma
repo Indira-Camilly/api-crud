@@ -1,0 +1,21 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js" // Gera o cliente do Prisma
+}
+
+datasource db {
+  provider = "mysql"           // Define o provedor como MySQL
+  url      = env("DATABASE_URL") // Obtém a URL de conexão do arquivo .env
+}
+
+model Usuario {
+  id           Int    @id @default(autoincrement()) // Chave primária com auto-incremento
+  Equipamento  String                             // Coluna para o equipamento (VARCHAR 255)
+  Subestacao   String                             // Coluna para subestação (VARCHAR 255)
+  plc          String                             // Coluna para plc (VARCHAR 45)
+}
